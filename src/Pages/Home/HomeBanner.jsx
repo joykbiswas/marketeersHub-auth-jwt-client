@@ -65,7 +65,7 @@ function HomeBanner() {
 //   }, []);
 
   return (
-    <div className="h-[80vh] my-9 relative">
+    <div className="md:h-[60vh] lg:h-[80vh] my-9 relative">
       <div
         id="default-carousel"
         className="relative w-full h-56 md:h-full drop-shadow-2xl"
@@ -85,20 +85,20 @@ function HomeBanner() {
                 className="absolute top-0 right-0 w-3/5 h-full justify-center"
                 alt={`Slide ${index + 1}`}
               />
-              <div className="absolute inset-0 flex flex-col items-start ps-20 justify-center text-white bg-black/10">
-                <div className="text-left  w-2/5"
+              <div className="absolute inset-0 flex flex-col items-start ps-8 lg:ps-16 justify-center text-white bg-black/10">
+                <div className="text-left  w-3/5"
 
 
                 >
-                  <h1 className="text-2xl  font-bold mb-4 text-rose-400">
+                  <h1 className="text-lg md:text-2xl  font-bold mb-2 md:mb-4 text-rose-400">
                     
                     {item.header}
                   </h1>
-                  <p className="opacity-80 mb-12 text-4xl font-semibold">
+                  <p className="opacity-80 mb-3 md:mb-8 lg:mb-12 text-xl md:text-3xl lg:text-4xl font-semibold">
                     {item.text}
                     {/* {texts[currentTextIndex]} */}
                   </p>
-                  <div className="flex gap-2">
+                  <div className=" gap-2">
                     <button className="text-white bg-transparent border border-white py-4 px-4 rounded-lg font-semibold hover:bg-white hover:text-black">
                       {item.buttonLabel}
                     </button>
