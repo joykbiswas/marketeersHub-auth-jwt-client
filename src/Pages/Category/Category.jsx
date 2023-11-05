@@ -5,7 +5,7 @@ import "react-tabs/style/react-tabs.css";
 const Category = ({setSelectedCategory}) => {
     
     const handleButtonClick = (filter) => {
-        // setActiveFilter(filter);
+       console.log("selected category:" ,filter);
         setSelectedCategory(filter);
       };
 
@@ -15,11 +15,6 @@ const Category = ({setSelectedCategory}) => {
         <TabList>
           <Tab><button
         onClick={() => handleButtonClick("web development")}
-        // className={`text-xl ${
-        //   activeFilter === "EducationalConferences"
-        //     ? "underline text-blue-500"
-        //     : ""
-        // }`}
       >
         Web Development
       </button></Tab>
@@ -27,9 +22,7 @@ const Category = ({setSelectedCategory}) => {
           <Tab>
           <button
         onClick={() => handleButtonClick("digital marketing")}
-        // className={`text-xl ${
-        //   activeFilter === "TrainingPrograms" ? "underline text-blue-500" : ""
-        // }`}
+      
       >
         Digital Market
       </button>
@@ -37,32 +30,13 @@ const Category = ({setSelectedCategory}) => {
           <Tab>
           <button
         onClick={() => handleButtonClick("graphics design")}
-        // className={`text-xl ${
-        //   activeFilter === "TrainingPrograms" ? "underline text-blue-500" : ""
-        // }`}
+       
       >
         Graphics Design
       </button>
           </Tab>
         </TabList>
 
-
-
-
-
-        {/* <TabPanel>
-          <h2>Any content 1</h2>
-          <h2>Any content 1</h2>
-          <h2>Any content 1</h2>
-          <h2>Any content 1</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 2</h2>
-          <h2>Any content 2</h2>
-          <h2>Any content 2</h2>
-          <h2>Any content 2</h2>
-          <h2>Any content 2</h2>
-        </TabPanel> */}
       </Tabs>
     </div>
   );
@@ -71,5 +45,6 @@ const Category = ({setSelectedCategory}) => {
 export default Category;
 
 Category.propTypes = {
-    setSelectedCategory: PropTypes.func,
+    setSelectedCategory: PropTypes.array,
   };
+

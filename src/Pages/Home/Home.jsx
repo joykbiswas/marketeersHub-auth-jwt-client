@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Category from "../Category/Category";
 import HomeBanner from "./HomeBanner";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import JobCards from "./JobCards";
 
 
@@ -10,13 +10,20 @@ const Home = () => {
     console.log(jobs);
     const [selectedCategory,setSelectedCategory] = useState(null)
 
-    // const filteredJobs = selectedCategory ? jobs
-    //        :jobs.filter((job) => job.Category === selectedCategory)
-    const filteredJobs = selectedCategory === "all" 
-    ? jobs
-    : selectedCategory 
-    ? jobs.filter((job) => job.category === selectedCategory)
-    : jobs;
+    const filteredJobs = selectedCategory 
+           ? jobs.filter((job) => job.category === selectedCategory)
+           :jobs
+
+           console.log("selected category:" ,filteredJobs);
+
+           useEffect(() => {
+            setSelectedCategory("web development"); // Set the default category here
+          }, []);
+    // const filteredJobs = selectedCategory === "all" 
+    // ? jobs
+    // : selectedCategory 
+    // ? jobs.filter((job) => job.category === selectedCategory)
+    // : jobs;
     return (
         <div>
             
@@ -26,7 +33,7 @@ const Home = () => {
             <Category setSelectedCategory={setSelectedCategory}></Category>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mb-12">
                 {
                     filteredJobs.map(aJob =>(
                         <JobCards key={aJob._id}
@@ -37,7 +44,7 @@ const Home = () => {
             </div>
            {/* <div>
             {
-                jobs.map(aJob =>(
+                filteredJobs.map(aJob =>(
                     <JobCards key={aJob._id}
                     job ={aJob}
                     ></JobCards>
