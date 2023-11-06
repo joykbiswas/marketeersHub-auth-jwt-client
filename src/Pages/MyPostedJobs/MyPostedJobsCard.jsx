@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const MyPostedJobsCard = ({job}) => {
-    const{jobTitle, deadline, maximumPrice, minimumPrice, description} = job;
+const MyPostedJobsCard = ({job, handleDeleted}) => {
+    const{_id, jobTitle, deadline, maximumPrice, minimumPrice, description} = job;
     console.log(job);
 
     return (
@@ -14,9 +15,12 @@ const MyPostedJobsCard = ({job}) => {
             <p>Price Range: ${minimumPrice} - ${maximumPrice}</p>
             <p >Description: {description}</p>
            </div>
-          <div className=" justify-center text-center">
-            <button className="btn btn-primary hover:bg-sky-400 hover:text-black hover:font-bold">Bid Now </button>
-            {/* <button className="btn btn-ghost">Deny</button> */}
+          <div className="  card-actions   ">
+            <Link to={`updateJob/${_id}`}>
+               <button className="btn btn-primary hover:bg-sky-400 hover:text-black hover:font-bold">Update </button>
+            </Link>
+            <button onClick={() => handleDeleted(_id)}
+             className="btn btn-ghost">delete</button>
           </div>
         </div>
        </div>
@@ -27,5 +31,6 @@ export default MyPostedJobsCard;
 
 
 MyPostedJobsCard.propTypes = {
-    job: PropTypes.func,
+    job: PropTypes.array,
+    handleDeleted: PropTypes.func,
   };
