@@ -1,11 +1,12 @@
+import PropTypes from "prop-types";
 
 const MyBidsRow = ({apply,handleSelectedConform}) => {
-    const {email,jobTitle,description,status} = apply
+    const {_id,userEmail,jobTitle,description,status} = apply
     console.log(apply);
     return (
         <tr>
             <td>
-                {email}
+                {userEmail}
             </td>
             <td>
                 {jobTitle}
@@ -24,3 +25,9 @@ const MyBidsRow = ({apply,handleSelectedConform}) => {
 };
 
 export default MyBidsRow;
+
+
+MyBidsRow.propTypes = {
+    apply: PropTypes.array,
+    handleSelectedConform: PropTypes.func,
+  };

@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const JobDetails = () => {
   const job = useLoaderData();
@@ -7,6 +9,8 @@ const JobDetails = () => {
     job;
 
   console.log(job);
+  const {user} = useContext(AuthContext)
+  console.log(user.email);
   // form section
   const handleAddJob = (event) => {
     event.preventDefault();
@@ -74,6 +78,7 @@ const JobDetails = () => {
                     <input
                       type="email"
                       name="email"
+                      defaultValue={user?.email}
                       placeholder="Enter your email"
                       className="input input-bordered w-full "
                       required
@@ -86,14 +91,7 @@ const JobDetails = () => {
                   </label>
                   <label className="input-group">
                     <p className="border py-3">{email}</p>
-                    {/* <input
-                type="email"
-                // name="email"
-                defaultValue={email}
-                placeholder="Enter your email"
-                className="input input-bordered w-full "
-                required
-              /> */}
+                    
                   </label>
                 </div>
               </div>

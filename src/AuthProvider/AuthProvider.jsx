@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../Components/firebase/firebase.config";
+import axios from "axios";
 // import app from "../firebase/firebase.config";
 
 
@@ -54,14 +55,32 @@ const AuthProvider = ({children}) => {
     //Observer user
     useEffect(()=>{
        const unSubscribe = onAuthStateChanged(auth, currentUser=>{
-            setUser(currentUser)
-            setLoading(false)
-            console.log(currentUser);
+        const userEmail = currentUser?.email || user.email;
+        const loggedUser = {email: userEmail}    
+        setUser(currentUser)
+        setLoading(false)
+            // console.log(currentUser);
+         if(currentUser) {
+            axios.post('http://localhost:5000/jwt', loggedUser,{
+                withCredentials:true
+            })
+            .then(res =>{
+                console.log('token response',res.data);
+            })
+         }  
+         else{
+            axios.post('http://localhost:5000/logout', loggedUser, {
+                withCredentials:true
+            })
+            .then(res =>{
+                console.log(res.data);
+            })
+         } 
         });
         return() =>{
             unSubscribe();
         }
-    },[])
+    },[user?.email])
 
     const authInfo={user,createUser,logIn, logOut,handleUpdateProfile,googleLogin,githubLogin, loading}
 
