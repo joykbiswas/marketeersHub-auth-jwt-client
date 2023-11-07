@@ -1,18 +1,24 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import MyBidsRow from "./MyBidsRow";
+import useAxiosSecure from "../../Components/hooks/useAxiosSecure";
 
 const MyBids = () => {
   const { user } = useContext(AuthContext);
-  // console.log('userinfo:',user);
   const [apply, setApply] = useState([]);
-  const url = `http://localhost:5000/apply?email=${user?.email}`;
+  const axiosSecure = useAxiosSecure();
+  // const url = `http://localhost:5000/apply?email=${user?.email}`;
+
+  const url = `/apply?email=${user?.email}`;
 
   useEffect(() => {
-    fetch(url, {credentials: "include"})
-      .then((res) => res.json())
-      .then((data) => setApply(data));
-  }, [url]);
+    // fetch(url, {credentials: "include"})
+    //   .then((res) => res.json())
+    //   .then((data) => setApply(data));
+    axiosSecure.get(url)
+    .then(res =>setApply(res.data))
+    
+  }, [url, axiosSecure]);
 
   const handleSelectedConform = (id) => {
     fetch(`http://localhost:5000/apply/${id}`, {

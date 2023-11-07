@@ -3,6 +3,7 @@ import Category from "../Category/Category";
 import HomeBanner from "./HomeBanner";
 import { useEffect, useState } from "react";
 import JobCards from "./JobCards";
+import FindTalent from "./FindTalent/FindTalent";
 
 
 const Home = () => {
@@ -51,6 +52,9 @@ const Home = () => {
                 ))
             }
            </div> */}
+           <div>
+              {/* <FindTalent></FindTalent> */}
+           </div>
         </div>
     );
 };

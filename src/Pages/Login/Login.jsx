@@ -4,11 +4,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
-import { useContext, useState } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useState } from "react";
+import useAuth from "../../Components/hooks/useAuth";
 
 const Login = () => {
-  const {logIn} = useContext(AuthContext)
+  const {logIn} = useAuth();
+  // const {logIn} = useContext(AuthContext)
   const location = useLocation();
   // const navigate = useNavigate()
   console.log('location in the login page', location);
