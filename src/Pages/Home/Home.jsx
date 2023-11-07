@@ -4,6 +4,8 @@ import HomeBanner from "./HomeBanner";
 import { useEffect, useState } from "react";
 import JobCards from "./JobCards";
 import FindTalent from "./FindTalent/FindTalent";
+// import Form from "./Form/Form";
+import Choose from "./Choose/Choose";
 
 
 const Home = () => {
@@ -53,7 +55,9 @@ const Home = () => {
             }
            </div> */}
            <div>
-              {/* <FindTalent></FindTalent> */}
+              <FindTalent></FindTalent>
+              {/* <Form></Form> */}
+              <Choose></Choose>
            </div>
         </div>
     );

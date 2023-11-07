@@ -59,7 +59,8 @@ const BidRequest = () => {
             <tr>
               <th>User Email</th>
               <th>Job Title</th>
-              <th>Description</th>
+              <th>Price</th>
+              <th>Deadline</th>
               <th> Status</th>
             </tr>
           </thead>
