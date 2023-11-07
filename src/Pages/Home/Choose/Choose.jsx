@@ -1,24 +1,24 @@
 const Choose = () => {
   return (
-    <div className="mb-32  relative grid h-[35rem] w-full max-w-[100rem] flex-col items-end justify-center overflow-hidden rounded-xl  bg-clip-border">
+    <div className="mb-16  relative grid h-[40rem] w-full max-w-[100rem] flex-col items-end justify-center overflow-hidden rounded-xl  bg-clip-border">
        
         <div className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent 
            bg-[url('https://i.ibb.co/c6rpnhY/choose.jpg')] bg-cover   bg-clip-border bg-center text-white-900 shadow-none ">
 
        {/* <div className=""></div> */}
       <div className="absolute h-full hero-overlay bg-opacity-60">
-        <div className="text-center py-2 lg:pb-8">
+        <div className="text-center py-2 lg:py-7 lg:pb-8">
             <p className="text-4xl font-semibold text-white">Why Over  Million People Choose Us</p>
         </div>
-
       <div className=" md:flex  mx-auto ">  
            
+           {/* left sides */}
            <div className=" md:w-1/2 md:mr-20">
    
            <div className=" lg:text-left px-5 lg:px-2  text-white">
                  <div className="mt-3 lg:flex md:justify-start">
                    <img
-                     className="m-auto pr-2 bg-slate-300 rounded-full p-2 w-16"
+                     className="m-auto pr-2 bg-slate-300 rounded-full p-2 w-12"
                      src="https://i.ibb.co/jwmT7J0/img-1.png"
                      alt=""
                    />
@@ -35,7 +35,7 @@ const Choose = () => {
    
                  <div className="mt-3 lg:flex lg:justify-start">
                    <img
-                     className="m-auto pr-2 bg-slate-300 rounded-full p-2 w-16"
+                     className="m-auto pr-2 bg-slate-300 rounded-full p-2 w-12"
                      src="https://i.ibb.co/vBjpwcB/img-2.png"
                      alt=""
                    />
@@ -51,7 +51,7 @@ const Choose = () => {
    
                  <div className="mt-3 lg:flex lg:justify-start">
                    <img
-                     className="m-auto pr-2 bg-slate-300 rounded-full p-2 w-16"
+                     className="m-auto pr-2 bg-slate-300 rounded-full p-2 w-12"
                      src="https://i.ibb.co/c31kM8S/img-3.png"
                      alt=""
                    />
@@ -69,12 +69,12 @@ const Choose = () => {
                </div>
            </div>
    
-   
+              {/* right sides */}
            <div className="md:w-1/2 md:ml-20 ">
            <div className="text-center  px-14  lg:px-2 lg:text-right text-white">
                <div className="mt-3 lg:flex lg:flex-row-reverse ">
                  <img
-                   className=" m-auto lg:ml-2 bg-slate-300 rounded-full p-2 w-16"
+                   className=" m-auto lg:ml-2 bg-slate-300 rounded-full p-2 w-12"
                    src="https://i.ibb.co/QmzLXp0/im-4.jpg"
                    alt=""
                  />
@@ -91,7 +91,7 @@ const Choose = () => {
    
                <div className="mt-3 justify-center lg:flex lg:flex-row-reverse  ">
                  <img
-                   className="m-auto lg:ml-2 bg-slate-300 rounded-full p-2 w-16"
+                   className="m-auto lg:ml-2 bg-slate-300 rounded-full p-2 w-12"
                    src="https://i.ibb.co/J2yC6fP/img-5.png"
                    alt=""
                  />
@@ -106,8 +106,8 @@ const Choose = () => {
                  </div>
                </div>
    
-               <div className="mt-3 lg:flex lg:flex-row-reverse ">
-                 <button></button>
+               <div className=" justify-center mt-3 lg:flex lg:flex-row-reverse ">
+                 <button className="p-5 rounded font-semibold bg-sky-600 text-white hover:bg-white hover:text-sky-600 text-xl"> Why Choose Marketeers Hub</button>
                </div>
              </div>
            </div>
