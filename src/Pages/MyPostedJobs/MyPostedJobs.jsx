@@ -11,8 +11,8 @@ const MyPostedJobs = () => {
     const {user} = useContext(AuthContext)
     console.log('user',user?.email);
     const [jobs, setJobs] = useState([])
-    const url = `https://marketeers-hub-auth-jwt-server.vercel.app/jobs?email=${user?.email}`;
-    // const url ='https://marketeers-hub-auth-jwt-server.vercel.app/jobs'
+    const url = `http://localhost:5000/jobs?email=${user?.email}`;
+    // const url ='http://localhost:5000/jobs'
     useEffect(() =>{
         fetch(url)
         .then(res =>res.json())
@@ -33,7 +33,7 @@ const MyPostedJobs = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://marketeers-hub-auth-jwt-server.vercel.app/jobs/${_id}`,{
+                fetch(`http://localhost:5000/jobs/${_id}`,{
                     method:'DELETE'
 
                 })
@@ -59,7 +59,7 @@ const MyPostedJobs = () => {
 
     return (
       <div >
-         <h3>My posted jobs:{jobs.length}</h3>
+         
             <div className="grid grid-cols-1 md:grid-cols-2 lg: lg:grid-cols-3 gap-6">
             {
                 jobs.map(job =><MyPostedJobsCard 

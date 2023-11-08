@@ -276,6 +276,7 @@ const Navbar = () => {
 
           </ul>
         </div>
+        
         <div className="navbar-end">
           {/* <NavLink className="btn btn-sm" to="/login">
             Login

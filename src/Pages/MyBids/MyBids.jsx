@@ -7,7 +7,7 @@ const MyBids = () => {
   const { user } = useContext(AuthContext);
   const [apply, setApply] = useState([]);
   const axiosSecure = useAxiosSecure();
-  // const url = `https://marketeers-hub-auth-jwt-server.vercel.app/apply?email=${user?.email}`;
+  // const url = `http://localhost:5000/apply?email=${user?.email}`;
 
   const url = `/apply?email=${user?.email}`;
 
@@ -21,7 +21,7 @@ const MyBids = () => {
   }, [url, axiosSecure]);
 
   const handleSelectedConform = (id) => {
-    fetch(`https://marketeers-hub-auth-jwt-server.vercel.app/apply/${id}`, {
+    fetch(`http://localhost:5000/apply/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -46,7 +46,7 @@ const MyBids = () => {
   console.log(apply);
   return (
     <div>
-      <h1>my bid job:{apply.length}</h1>
+      
 
       <div className="overflow-x-auto">
         <table className="table table-zebra">

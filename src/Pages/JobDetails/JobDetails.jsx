@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import {  useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
@@ -9,6 +9,7 @@ const JobDetails = () => {
     job;
 
   console.log(job);
+  const navigate = useNavigate()
   const {user} = useContext(AuthContext)
   console.log(user.email);
   // form section
@@ -30,7 +31,7 @@ const JobDetails = () => {
     };
     console.log(apply);
 
-    fetch('https://marketeers-hub-auth-jwt-server.vercel.app/apply',{
+    fetch('http://localhost:5000/apply',{
       method:'POST',
       headers:{
         'content-type': 'application/json'
@@ -48,6 +49,8 @@ const JobDetails = () => {
         )
       }
     })
+    navigate( '/my_bids')
+    
   };
 
   return (

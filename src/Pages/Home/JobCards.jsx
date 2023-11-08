@@ -22,7 +22,7 @@ const JobCards = ({ job }) => {
             <Link to={`/job/${_id}`}>
             <button className="btn btn-primary hover:bg-sky-400 hover:text-black hover:font-bold">Bid Now </button>
             </Link>
-            {/* <button className="btn btn-ghost">Deny</button> */}
+            
           </div>
         </div>
        </div>
@@ -34,7 +34,3 @@ export default JobCards;
 JobCards.propTypes = {
   job: PropTypes.object,
 };
-
-// <div className="grid w-96  rounded bg-primary text-primary-content place-content-center">
-// <div className="grid w-96  rounded bg-accent text-accent-content place-content-center">
-// <div className="grid w-96  rounded bg-secondary text-secondary-content place-content-center">

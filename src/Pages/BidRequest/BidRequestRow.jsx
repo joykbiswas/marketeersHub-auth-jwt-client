@@ -2,12 +2,12 @@ import PropTypes from "prop-types";
 
 
 const BidRequestRow = ({ bid, handleSelectedConform }) => {
-  const { _id, email, jobTitle,price, deadline, status } = bid;
+  const { _id,userEmail, jobTitle,price, deadline, status } = bid;
 
   console.log(bid);
   return (
     <tr>
-      <td>{email}</td>
+      <td>{userEmail}</td>
       <td>{jobTitle}</td>
       <td>{price}</td>
       <td>{deadline}</td>
@@ -19,9 +19,6 @@ const BidRequestRow = ({ bid, handleSelectedConform }) => {
             </th>
             <th>
             <button
-              onClick={() =>
-                handleSelectedConform( status === "Rejects" ? "Rejected" : "Reject")
-              }
             >
                  Reject
             </button>

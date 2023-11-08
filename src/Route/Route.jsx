@@ -10,16 +10,18 @@ import MyBids from "../Pages/MyBids/MyBids";
 import UpdateJob from "../Components/UpdateJob/UpdateJob";
 import BidRequest from "../Pages/BidRequest/BidRequest";
 import PrivateRoute from "../Components/Root/PrivateRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<ErrorPage></ErrorPage> ,
       children:[
         {
           path:"/",
           element:<Home></Home>,
-          loader:()=> fetch('https://marketeers-hub-auth-jwt-server.vercel.app/jobs')
+          loader:()=> fetch('http://localhost:5000/jobs')
         },
         {
           path:"/login",
@@ -37,17 +39,16 @@ import PrivateRoute from "../Components/Root/PrivateRoute";
         {
           path:"myPosted_jobs",
           element:<PrivateRoute><MyPostedJobs></MyPostedJobs></PrivateRoute>,
-          // loader:()=> fetch(`https://marketeers-hub-auth-jwt-server.vercel.app/jobs?email=${user.email}`)
         },
         {
           path:'myPosted_jobs/updateJob/:id',
           element:<UpdateJob></UpdateJob>,
-          loader:({params}) =>fetch(`https://marketeers-hub-auth-jwt-server.vercel.app/jobs/${params.id}`)
+          loader:({params}) =>fetch(`http://localhost:5000/jobs/${params.id}`)
         },
         {
           path:"/job/:id",
           element:<PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
-          loader:({params}) =>fetch(`https://marketeers-hub-auth-jwt-server.vercel.app/jobs/${params.id}`)
+          loader:({params}) =>fetch(`http://localhost:5000/jobs/${params.id}`)
         },
         {
           path:"/my_bids",
