@@ -21,7 +21,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
         {
           path:"/",
           element:<Home></Home>,
-          loader:()=> fetch('http://localhost:5000/jobs')
+          loader:()=> fetch('https://marketeers-hub-auth-jwt-server.vercel.app/jobs')
         },
         {
           path:"/login",
@@ -43,12 +43,12 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
         {
           path:'myPosted_jobs/updateJob/:id',
           element:<UpdateJob></UpdateJob>,
-          loader:({params}) =>fetch(`http://localhost:5000/jobs/${params.id}`)
+          loader:({params}) =>fetch(`https://marketeers-hub-auth-jwt-server.vercel.app/jobs/${params.id}`)
         },
         {
           path:"/job/:id",
           element:<PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
-          loader:({params}) =>fetch(`http://localhost:5000/jobs/${params.id}`)
+          loader:({params}) =>fetch(`https://marketeers-hub-auth-jwt-server.vercel.app/jobs/${params.id}`)
         },
         {
           path:"/my_bids",
