@@ -31,12 +31,12 @@ import PrivateRoute from "../Components/Root/PrivateRoute";
         },
         {
           path:"/add_job",
-          element:<AddJobs></AddJobs>
+          element:<PrivateRoute><AddJobs></AddJobs></PrivateRoute>
 
         },
         {
           path:"myPosted_jobs",
-          element:<MyPostedJobs></MyPostedJobs>,
+          element:<PrivateRoute><MyPostedJobs></MyPostedJobs></PrivateRoute>,
           // loader:()=> fetch(`http://localhost:5000/jobs?email=${user.email}`)
         },
         {
@@ -46,7 +46,7 @@ import PrivateRoute from "../Components/Root/PrivateRoute";
         },
         {
           path:"/job/:id",
-          element:<JobDetails></JobDetails>,
+          element:<PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
           loader:({params}) =>fetch(`http://localhost:5000/jobs/${params.id}`)
         },
         {

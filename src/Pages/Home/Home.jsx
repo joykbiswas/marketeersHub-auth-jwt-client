@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Category from "../Category/Category";
-import HomeBanner from "./HomeBanner";
+// import HomeBanner from "./HomeBanner";
 import { useEffect, useState } from "react";
 import JobCards from "./JobCards";
 import FindTalent from "./FindTalent/FindTalent";
@@ -8,6 +8,7 @@ import FindTalent from "./FindTalent/FindTalent";
 import Choose from "./Choose/Choose";
 import Testimonal from "./Testimonal/Testimonal";
 import OurSuccess from "./OurSuccess/OurSuccess";
+import Banner from "./Banner";
 
 const Home = () => {
   const jobs = useLoaderData();
@@ -30,7 +31,7 @@ const Home = () => {
   // : jobs;
   return (
     <div>
-      <HomeBanner></HomeBanner>
+      <Banner></Banner>
       <OurSuccess></OurSuccess>
 
       <div className="my-3">
@@ -42,18 +43,10 @@ const Home = () => {
           <JobCards key={aJob._id} job={aJob}></JobCards>
         ))}
       </div>
-      {/* <div>
-            {
-                filteredJobs.map(aJob =>(
-                    <JobCards key={aJob._id}
-                    job ={aJob}
-                    ></JobCards>
-                ))
-            }
-           </div> */}
+      
       <div>
         <FindTalent></FindTalent>
-        {/* <Form></Form> */}
+       
         <Choose></Choose>
         <Testimonal></Testimonal>
       </div>

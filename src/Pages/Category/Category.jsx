@@ -10,7 +10,7 @@ const Category = ({setSelectedCategory}) => {
       };
 
   return (
-    <div>
+    <div className="ml-6 lg:ml-0">
       <Tabs>
         <TabList>
           <Tab><button

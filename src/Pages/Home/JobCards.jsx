@@ -9,7 +9,7 @@ const JobCards = ({ job }) => {
   console.log(job);
   return (
       
-      <div className="card  bg-white  border-sky-400 border-b-4 border-r-4  shadow-2xl stack">
+      <div className="mx-4 lg:ml-0 card  bg-white  border-sky-400 border-b-4 border-r-4  shadow-2xl stack">
 
         <div className="card-body items-start text-center flex">
           <h2 className="card-title text-2xl font-bold">JobTitle: {jobTitle}</h2>
