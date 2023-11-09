@@ -22,7 +22,7 @@ const UpdateJob = () => {
         const updatedJob = {email,category,  jobTitle, deadline, maximumPrice, minimumPrice, description}
         console.log(updatedJob);
         //send data to the server
-        fetch(`http://localhost:5000/jobs/${_id}`,{
+        fetch(`https://marketeers-hub-auth-jwt-server.vercel.app/jobs/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

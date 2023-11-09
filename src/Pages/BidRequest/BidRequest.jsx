@@ -8,7 +8,7 @@ const BidRequest = () => {
   const { user } = useContext(AuthContext);
   const [bids, setBids] = useState([]);
   const axiosSecure = useAxiosSecure();
-  // const url = `http://localhost:5000/apply_buyer?email=${user?.email}`;
+  // const url = `https://marketeers-hub-auth-jwt-server.vercel.app/apply_buyer?email=${user?.email}`;
   const url = `/apply_buyer?email=${user?.email}`;
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const BidRequest = () => {
   }, [url, axiosSecure]);
 
   const handleSelectedConform = (id) => {
-    fetch(`http://localhost:5000/apply_buyer/${id}`, {
+    fetch(`https://marketeers-hub-auth-jwt-server.vercel.app/apply_buyer/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

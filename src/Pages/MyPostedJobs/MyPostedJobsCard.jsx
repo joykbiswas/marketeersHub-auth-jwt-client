@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const MyPostedJobsCard = ({ job, handleDeleted }) => {
   const { _id, jobTitle, deadline, maximumPrice, minimumPrice, description } =
     job;
-  console.log(job);
+  
 
   return (
     <div className="pt-12">

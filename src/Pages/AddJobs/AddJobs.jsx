@@ -29,7 +29,7 @@ const AddJobs = () => {
       description,
     };
     console.log(addJobs);
-    fetch("http://localhost:5000/jobs", {
+    fetch("https://marketeers-hub-auth-jwt-server.vercel.app/jobs", {
       method: "POST",
       headers: {
         "content-type": "application/json",
