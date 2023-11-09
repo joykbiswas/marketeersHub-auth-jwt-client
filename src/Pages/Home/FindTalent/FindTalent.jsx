@@ -2,7 +2,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 const FindTalent = () => {
   return (
-    <div className="px-4 lg:pl-0 py-7">
+    <div className="px-4 lg:pl-0 py-9">
       <div className="relative grid h-[40rem] w-full max-w-[100rem] flex-col items-end justify-center overflow-hidden rounded-xl  bg-clip-border">
         <div
           className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent 
@@ -15,14 +15,15 @@ const FindTalent = () => {
                 <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold">
                   Find talent your way
                 </h2>
-                <p className="text-xl font-semibold">
+                <p className="hidden md:block text-xl font-semibold">
                   Work with the largest network of independent professionals and
                   get things done—from quick turnarounds to big transformations.
                 </p>
               </div>
 
               {/* card section */}
-              <div className=" flex-row md:flex space-y-3 md:gap-4 lg:gap-5 pr-12">
+              <div className=" flex-row md:flex space-y-3 md:gap-4 lg:gap-5 pr-12"
+              >
                 {/* 1st card */}
                 <div className="w-full card  bg-base-100 text-black shadow-xl ">
                   <div className="card-body bg-green-600 rounded-xl text-white hover:bg-white hover:text-green-500 space-y-3">

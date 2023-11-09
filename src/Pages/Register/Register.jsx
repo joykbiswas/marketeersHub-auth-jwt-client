@@ -27,7 +27,7 @@ const Register = () => {
         "Minimum six characters,at least one uppercase and special character"
       );
     } else {
-      console.log("password ok");
+      
       toast.success("register successfully");
 
       createUser(email, password).then((result) => {
@@ -48,12 +48,13 @@ const Register = () => {
         toast.success("google login");
       })
       .catch((error) => console.error(error));
+      navigate("/");
   };
 
   return (
-    <div>
+    <div className="mt-12 lg:mt-16">
       
-      <h2 className="text-3xl text-center">Please Register Now</h2>
+      <h2 className="text-3xl text-center font-semibold">Please Register Now</h2>
       <div className="w-1/2 mx-auto">
         <form onSubmit={handleRegister} className="card-body">
           <div className="form-control">
@@ -118,12 +119,15 @@ const Register = () => {
                 login
               </Link>
             </p>
+          </div >
+          <div className="text-black flex justify-around items-center">
+            <hr className=" border border-blue-300 w-2/5 "/> OR <hr className=" border border-blue-300 w-2/5"/>
           </div>
           <button
             onClick={handleGoogleLogin}
-            className="btn text-green-600 text-2xl w-28 "
+            className="btn text-green-600 text-2xl w-full border border-black"
           >
-            <FaGoogle></FaGoogle>
+            <FaGoogle></FaGoogle> <span className="text-black">Google</span>
           </button>
         </form>
       </div>

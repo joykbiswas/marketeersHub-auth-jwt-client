@@ -4,7 +4,7 @@ import { FaAward, FaMoneyBillAlt } from "react-icons/fa";
 
 const OurSuccess = () => {
   return (
-    <div className=" bg-slate-50 mb-8">
+    <div className=" bg-slate-50 mb-8 py-4">
       <div className="ml-6 lg:ml-0 lg:justify-center grid  grid-cols-2 lg:grid-cols-4">
         <div className="flex items-center">
           <div className="text-3xl ">

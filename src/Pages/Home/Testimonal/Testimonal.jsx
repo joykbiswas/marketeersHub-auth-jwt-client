@@ -4,21 +4,18 @@ const Testimonal = () => {
       <div className="carousel w-full shadow-2xl h-[500px] ">
         <div id="slide1" className="carousel-item relative w-full">
           <div className="absolute rounded-xl flex items-center h-full ">
-            <div className=" space-y-7 pl-12 w-5/6 mx-auto">
+            <div className=" space-y-7 px-2 md:px-6 w-5/6 mx-auto">
               <p className="text-lg">
                 Scopic Software has been on Marketeers Hub since its founding in
                 2006. We are now over 200 employees and Marketeers Hub is still
-                our primary source of new clients. We would not be where we are
-                today without Marketeers Hub. It is definitely the best service
+                our primary source of new clients. It is definitely the best service
                 marketplace out there if you are looking to grow a company,
                 either as a buyer or provider.
                 <br></br> <br></br>
                 Marketeers Hub is not only a marketplace but a place to do
                 business. We meet new clients and more often than not establish
                 long-term business relationships, all through Marketeers Hub.
-                The flexibility in how projects can be structured and the many
-                payment options available allows us to work with clients in a
-                way they feel most comfortable. We have been with Marketeers Hub
+                 We have been with Marketeers Hub
                 for over 10 years and hope to be here much longer.
               </p>
               <div className="flex items-center gap-7 justify-center ">

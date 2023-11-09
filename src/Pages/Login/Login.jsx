@@ -40,9 +40,9 @@ const Login = () => {
       })
     }
   return (
-    <div>
-      {/* <Navbar></Navbar> */}
-      <h2 className="text-3xl text-center">Please Login </h2>
+    <div className="mt-12 lg:mt-16">
+      
+      <h2 className="text-3xl text-center font-semibold">Please Login </h2>
       <div className="w-1/2 mx-auto">
         <form onSubmit={handleLogin} className="card-body">
           <div className="form-control">

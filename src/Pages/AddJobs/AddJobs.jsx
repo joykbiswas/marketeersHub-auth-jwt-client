@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const AddJobs = () => {
+  const {user} = useContext(AuthContext)
   const navigate = useNavigate();
   const handleAddJob = (event) => {
     event.preventDefault();
@@ -67,6 +70,7 @@ const AddJobs = () => {
                 <input
                   type="email"
                   name="email"
+                  defaultValue={user?.email}
                   placeholder="Enter your email"
                   className="input input-bordered w-full "
                   required

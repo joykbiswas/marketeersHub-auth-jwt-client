@@ -23,14 +23,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
           element:<Home></Home>,
           loader:()=> fetch('http://localhost:5000/jobs')
         },
-        {
-          path:"/login",
-          element:<Login></Login>
-        },
-        {
-          path:"/register",
-          element:<Register></Register>
-        },
+        
         {
           path:"/add_job",
           element:<PrivateRoute><AddJobs></AddJobs></PrivateRoute>
@@ -60,6 +53,15 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
           element:<PrivateRoute><BidRequest></BidRequest></PrivateRoute>
         }
       ]
+      
+    },
+    {
+      path:"/login",
+      element:<Login></Login>
+    },
+    {
+      path:"/register",
+      element:<Register></Register>
     },
   ]);  
 
