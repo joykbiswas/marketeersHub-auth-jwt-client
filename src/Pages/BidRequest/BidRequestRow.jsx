@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 
-
 const BidRequestRow = ({ bid, handleSelectedConform }) => {
-  const { _id,userEmail, jobTitle,price, deadline, status } = bid;
+  const { _id, userEmail, jobTitle, price, deadline, status } = bid;
 
   console.log(bid);
   return (
@@ -12,20 +11,22 @@ const BidRequestRow = ({ bid, handleSelectedConform }) => {
       <td>{price}</td>
       <td>{deadline}</td>
       <td>
-      <th>
-                {
-                    status === 'confirm' ? <span className="font-bold text-primary">Confirmed</span> :
-                        <button onClick={() => handleSelectedConform(_id)} className="btn btn-ghost btn-xs">Please Confirm</button>}
-            </th>
-            <th>
+        <th>
+          {status === "confirm" ? (
+            <span className="font-bold text-primary">Confirmed</span>
+          ) : (
             <button
+              onClick={() => handleSelectedConform(_id)}
+              className="btn btn-ghost btn-xs"
             >
-                 Reject
+              Please Confirm
             </button>
-            </th>
-            </td>
-
-
+          )}
+        </th>
+        <th>
+          <button>Reject</button>
+        </th>
+      </td>
 
       {/* <th>
                 {
@@ -57,7 +58,7 @@ const BidRequestRow = ({ bid, handleSelectedConform }) => {
                     </>
                 )}
             </td> */}
-{/* 
+      {/* 
       <td>
         {status === "confirm" ? (
           <span className="font-bold text-primary">Accepted</span>
@@ -83,6 +84,6 @@ const BidRequestRow = ({ bid, handleSelectedConform }) => {
 export default BidRequestRow;
 
 BidRequestRow.propTypes = {
-    bid: PropTypes.array,
-    handleSelectedConform: PropTypes.func,
-  };
+  bid: PropTypes.array,
+  handleSelectedConform: PropTypes.func,
+};

@@ -7,8 +7,8 @@ const BidRequest = () => {
     const {user} = useContext(AuthContext)
     const [bids, setBids] = useState([]);
     const axiosSecure = useAxiosSecure();
-    // const url = `https://marketeers-hub-auth-jwt-server.vercel.app/apply?email=${user?.email}`;
-    const url = `/apply_byer?email=${user?.email}`;
+    // const url = `http://localhost:5000/apply?email=${user?.email}`;
+    const url = `/apply_buyer?email=${user?.email}`;
 
     useEffect(() =>{
         // fetch(url, {credentials: "include"})
@@ -23,19 +23,19 @@ const BidRequest = () => {
         
     },[url,axiosSecure])
 
-    const handleSelectedConform = (id, newStatus) =>{
-        fetch(`https://marketeers-hub-auth-jwt-server.vercel.app/apply/${id}`, {
+    const handleSelectedConform = (id) =>{
+        fetch(`http://localhost:5000/apply_buyer/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
-            body:JSON.stringify({status: newStatus})
+            body:JSON.stringify({status: 'conform'})
         })
         .then(res =>res.json())
         .then(data =>{
             console.log(data);
             // if(data.modifiedCount > 0) {
-            if(data.matchedCount > 0) {
+            if(data.modifiedCount > 0) {
                 // update status
 
                 const remaining = bids.filter(bid =>bid._id !== id)
