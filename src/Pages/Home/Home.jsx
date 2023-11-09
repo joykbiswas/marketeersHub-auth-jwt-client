@@ -9,6 +9,7 @@ import Choose from "./Choose/Choose";
 import Testimonal from "./Testimonal/Testimonal";
 import OurSuccess from "./OurSuccess/OurSuccess";
 import Banner from "./Banner";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const jobs = useLoaderData();
@@ -31,6 +32,9 @@ const Home = () => {
   // : jobs;
   return (
     <div>
+      <Helmet>
+        <title>Marketeers Hub | Home</title>
+      </Helmet>
       <Banner></Banner>
       <OurSuccess></OurSuccess>
 
@@ -44,12 +48,12 @@ const Home = () => {
         ))}
       </div>
       
-      <div>
+      
         <FindTalent></FindTalent>
        
         <Choose></Choose>
         <Testimonal></Testimonal>
-      </div>
+      
     </div>
   );
 };

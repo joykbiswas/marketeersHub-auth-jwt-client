@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import MyBidsRow from "./MyBidsRow";
 import useAxiosSecure from "../../Components/hooks/useAxiosSecure";
+import { Helmet } from "react-helmet";
 
 const MyBids = () => {
   const { user } = useContext(AuthContext);
@@ -46,7 +47,9 @@ const MyBids = () => {
   console.log(apply);
   return (
     <div>
-      
+       <Helmet>
+        <title>Marketeers | My Bids</title>
+      </Helmet>
 
       <div className="overflow-x-auto">
         <table className="table table-zebra">
