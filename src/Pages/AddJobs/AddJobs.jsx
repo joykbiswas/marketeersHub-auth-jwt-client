@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const AddJobs = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleAddJob = (event) => {
     event.preventDefault();
@@ -47,10 +47,11 @@ const AddJobs = () => {
             confirmButtonText: "Add job",
           });
         }
+        navigate("/myPosted_jobs");
 
         // form.reset();
       });
-    navigate("/myPosted_jobs");
+      
   };
   return (
     <div>
