@@ -31,7 +31,7 @@ const JobDetails = () => {
     };
     console.log(apply);
 
-    fetch('https://marketeers-hub-auth-jwt-server.vercel.app/apply',{
+    fetch('http://localhost:5000/apply',{
       method:'POST',
       headers:{
         'content-type': 'application/json'

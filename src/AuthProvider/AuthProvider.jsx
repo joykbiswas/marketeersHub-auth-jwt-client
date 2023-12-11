@@ -61,7 +61,7 @@ const AuthProvider = ({children}) => {
         setLoading(false)
             // console.log(currentUser);
          if(currentUser) {
-            axios.post('https://marketeers-hub-auth-jwt-server.vercel.app/jwt', loggedUser,{
+            axios.post('http://localhost:5000/jwt', loggedUser,{
                 withCredentials:true
             })
             .then(res =>{
@@ -69,7 +69,7 @@ const AuthProvider = ({children}) => {
             })
          }  
          else{
-            axios.post('https://marketeers-hub-auth-jwt-server.vercel.app/logout', loggedUser, {
+            axios.post('http://localhost:5000/logout', loggedUser, {
                 withCredentials:true
             })
             .then(res =>{
