@@ -10,6 +10,8 @@ import Testimonal from "./Testimonal/Testimonal";
 import OurSuccess from "./OurSuccess/OurSuccess";
 import Banner from "./Banner";
 import { Helmet } from "react-helmet";
+import Qna from "./QNA/Qna";
+import TeamMember from "./TeamMember/TeamMember";
 
 const Home = () => {
   const jobs = useLoaderData();
@@ -52,7 +54,9 @@ const Home = () => {
         <FindTalent></FindTalent>
        
         <Choose></Choose>
+        <TeamMember></TeamMember>
         <Testimonal></Testimonal>
+        <Qna></Qna>
       
     </div>
   );

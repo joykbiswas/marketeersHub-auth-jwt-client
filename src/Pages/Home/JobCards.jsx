@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const JobCards = ({ job }) => {
   const { _id, jobTitle, deadline, maximumPrice, minimumPrice, description } =
     job;
-  console.log(job);
+  // console.log(job);
   return (
     <div
       className="mx-4 lg:ml-0  card  bg-white  border-sky-400 border-b-4 border-r-4  shadow-2xl stack"

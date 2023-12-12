@@ -10,13 +10,9 @@ const Testimonal = () => {
                 2006. We are now over 200 employees and Marketeers Hub is still
                 our primary source of new clients. It is definitely the best service
                 marketplace out there if you are looking to grow a company,
-                either as a buyer or provider.
-                <br></br> <br></br>
-                Marketeers Hub is not only a marketplace but a place to do
+                either as a buyer or provider.Marketeers Hub is not only a marketplace but a place to do
                 business. We meet new clients and more often than not establish
-                long-term business relationships, all through Marketeers Hub.
-                 We have been with Marketeers Hub
-                for over 10 years and hope to be here much longer.
+                long-term business relationships.
               </p>
               <div className="flex items-center gap-7 justify-center ">
                 <div>
